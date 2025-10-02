@@ -1,3 +1,5 @@
+import javax.management.relation.Role;
+
 public class Functions {
 
     // Repositórios e serviços devem ser declarados aqui (Assumindo injeção via construtor ou @Autowired)
@@ -40,6 +42,9 @@ public class Functions {
 
     @PostMapping("/user")
     public User saveUser(User user){
+       if (user.isAdmin) {
+            user.setRole(Role.ADMIN); // ou user.setRole("ADMIN"), dependendo da sua implementação
+        }
         return userService.save(user);
     }
 
