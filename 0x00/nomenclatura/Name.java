@@ -8,7 +8,7 @@ public class Name {
     }
 
     // Declarações corretas (usando List ao invés de array para coleções)
-    public List<Account> accountList;
+    public List<Account> AccountList;
 
     // Sem prefixos desnecessários
     public void deleteUser(Name.User user) {
